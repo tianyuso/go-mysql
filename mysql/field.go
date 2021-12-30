@@ -2,8 +2,7 @@ package mysql
 
 import (
 	"encoding/binary"
-
-	"github.com/tianyuso/go-mysql/utils"
+        "github.com/tianyuso/go-mysql/utils"
 )
 
 type FieldData []byte
@@ -180,16 +179,17 @@ func (f *Field) Dump() []byte {
 	return data
 }
 
-func (fv *FieldValue) AsUint64() uint64 {
-	return fv.value
-}
-
 func (fv *FieldValue) AsInt64() int64 {
-	return utils.Uint64ToInt64(fv.value)
+        return utils.Uint64ToInt64(fv.value)
 }
 
 func (fv *FieldValue) AsFloat64() float64 {
-	return utils.Uint64ToFloat64(fv.value)
+        return utils.Uint64ToFloat64(fv.value)
+}
+
+
+func (fv *FieldValue) AsUint64() uint64 {
+	return fv.value
 }
 
 func (fv *FieldValue) AsString() []byte {
